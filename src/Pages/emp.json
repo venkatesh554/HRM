@@ -1,0 +1,81 @@
+[
+  {
+    "id": "EMP001",
+    "name": "Raju",
+    "department": "Engineering",
+    "role": "Software Developer",
+    "joiningDate": "2021-04-10",
+    "status": "Active"
+  },
+  {
+    "id": "EMP002",
+    "name": "Manu",
+    "department": "HR",
+    "role": "HR Executive",
+    "joiningDate": "2022-01-20",
+    "status": "Active"
+  },
+  {
+    "id": "EMP003",
+    "name": "Satish",
+    "department": "Sales",
+    "role": "Sales Manager",
+    "joiningDate": "2020-09-05",
+    "status": "On Leave"
+  },
+  {
+    "id": "EMP004",
+    "name": "Aravind",
+    "department": "Finance",
+    "role": "Accountant",
+    "joiningDate": "2019-11-15",
+    "status": "Inactive"
+  },
+  {
+    "id": "EMP005",
+    "name": "Venkatesh",
+    "department": "Development",
+    "role": "Frontend Engineer",
+    "joiningDate": "2023-02-18",
+    "status": "Active"
+  },
+
+
+
+
+   {
+    "id": "EMP006",
+    "name": "Rakesh",
+    "department": "Designer",
+    "role": "Frontend Engineer",
+    "joiningDate": "2023-02-18",
+    "status": "Active"
+  },
+   {
+    "id": "EMP007",
+    "name": "Sairam",
+    "department": "Development",
+    "role": "Frontend Engineer",
+    "joiningDate": "2023-02-18",
+    "status": "Active"
+  },
+   {
+    "id": "EMP008",
+    "name": "Subbu",
+    "department": "Development",
+    "role": "Frontend Engineer",
+    "joiningDate": "2023-02-18",
+    "status": "Active"
+  },
+   {
+    "id": "EMP009",
+    "name": "Sai",
+    "department": "Development",
+    "role": "Frontend Engineer",
+    "joiningDate": "2023-02-18",
+    "status": "Active"
+  }
+
+
+
+]

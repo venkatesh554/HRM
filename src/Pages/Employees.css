@@ -1,0 +1,347 @@
+
+
+.page-employees {
+  padding: 2rem;
+  animation: fadeIn 0.4s ease-in-out;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef2ff 100%);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header */
+.employee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.emp-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #2d2a5c;
+  margin: 0;
+}
+
+.emp-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.3rem;
+}
+
+/* Search & Add Controls */
+.employee-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.employee-search {
+  padding: 0.55rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  width: 220px;
+  background: #fff;
+  transition: 0.25s ease;
+}
+
+.employee-search:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+.btn-add {
+  background: linear-gradient(90deg, #6366f1, #7c3aed);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #7c3aed, #6366f1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+/* ===============================
+   TABLE DESIGN
+================================ */
+.employee-table-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.employee-table thead {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  color: white;
+  font-weight: 600;
+}
+
+.employee-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.employee-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  background-color: #fff;
+  font-size: 0.9rem;
+}
+
+.employee-table tr {
+  transition: all 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #f3f4ff;
+  transform: scale(1.005);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ===============================
+   STATUS BADGES
+================================ */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status-badge.active {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+}
+
+.status-badge.inactive {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+}
+
+.status-badge.onleave {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #d97706;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.btn-view {
+  background: #14b8a6;
+}
+.btn-view:hover {
+  background: #0d9488;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
+}
+
+.btn-edit {
+  background: #6366f1;
+}
+.btn-edit:hover {
+  background: #4f46e5;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.btn-delete {
+  background: #ef4444;
+  color:white;
+  border:none;
+  border-radius:0.5rem;
+}
+.btn-delete:hover {
+  background: #dc2626;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* ===============================
+   MODALS
+================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 24, 39, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.8rem;
+  width: 420px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: popIn 0.3s ease;
+}
+
+.modal h3 {
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #1e1b4b;
+}
+
+/* Form */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-form input,
+.modal-form select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.modal-form input:focus,
+.modal-form select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+/* Modal Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-cancel {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn-cancel:hover {
+  background: #d1d5db;
+}
+
+.btn-save {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn-save:hover {
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+/* VIEW Modal */
+.view-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.view-modal li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.view-modal li strong {
+  color: #4f46e5;
+}
+
+/* DELETE Modal */
+.delete-modal {
+  text-align: center;
+}
+.delete-modal p {
+  color: #444;
+  margin: 1rem 0;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .employee-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .employee-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .employee-search {
+    width: 100%;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}
