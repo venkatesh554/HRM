@@ -1,0 +1,204 @@
+/* 🌈 EMPLOYEE SIDEBAR — Next-Gen Frosted Neon UI */
+.employee-sidebar {
+  width: 260px;
+  min-width: 80px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+  box-sizing: border-box;
+  color: #fff;
+  background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
+  box-shadow: 0 8px 30px rgba(34, 43, 69, 0.15);
+  backdrop-filter: blur(14px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: width 220ms ease, background 300ms ease;
+  overflow: hidden;
+  animation: fadeInSidebar 0.6s ease-in-out;
+}
+
+/* 🌟 Subtle glowing overlay effect */
+.employee-sidebar::before {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent);
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: neonGlow 5s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes neonGlow {
+  from {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+/* 💎 Header */
+.sidebar-header {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(37, 117, 252, 0.8);
+}
+
+.sidebar-sub {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #e6f2ff;
+  opacity: 0.85;
+}
+
+/* 🧭 NAVIGATION MENU */
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #eaf4ff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.sidebar-item:hover {
+  background: linear-gradient(90deg, #36d1dc 0%, #5b86e5 100%);
+  transform: translateX(6px) scale(1.03);
+  box-shadow: 0 0 15px rgba(54, 209, 220, 0.4);
+  color: #fff;
+}
+
+.sidebar-item.active {
+  background: linear-gradient(90deg, #4776E6, #8E54E9);
+  box-shadow: 0 0 15px rgba(142, 84, 233, 0.5);
+  transform: scale(1.04);
+  color: #fff;
+}
+
+/* 🎨 Icon style */
+.sidebar-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.sidebar-item:hover .sidebar-icon {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-item:hover .sidebar-icon svg {
+  transform: scale(1.15);
+  color: #fff;
+}
+
+/* 🔻 FOOTER SECTION */
+.sidebar-footer {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  z-index: 2;
+  position: relative;
+}
+
+.logout-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  color: #ffd1dc;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 71, 87, 0.25);
+  color: #ff5c8a;
+  box-shadow: 0 0 12px rgba(255, 71, 87, 0.5);
+  transform: scale(1.05);
+}
+
+.footer-text {
+  font-size: 12px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0.9;
+}
+
+/* 💫 Fade-in Animation */
+@keyframes fadeInSidebar {
+  from {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .employee-sidebar {
+    width: 220px;
+    left: -240px;
+    transition: left 0.4s ease;
+  }
+
+  .employee-sidebar.active {
+    left: 0;
+  }
+}

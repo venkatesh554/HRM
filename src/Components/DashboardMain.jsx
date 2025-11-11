@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-// import EmployeeSidebar from "../Components2/EmployeeSidebar"
+// import EmployeeSidebar from "../EmployeeComponents2/EmployeeSidebar"
 import './Dashboard.new.css';
 
 import Dashboard from '../Pages/Dashboard';

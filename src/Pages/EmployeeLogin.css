@@ -1,0 +1,219 @@
+/* .employee-login-page {
+  padding: 18px;
+  background: linear-gradient(90deg, #f6f9ff 0%, #ffffff 100%);
+  border-radius: 8px;
+}
+
+.login-table-wrap {
+  overflow-x: auto;
+}
+
+.login-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.login-table th,
+.login-table td {
+  border: 1px solid #e6e6e6;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.login-table th {
+  background: #f8fafc;
+  color: #111827;
+}
+
+.status-badge.active { color: #059669; }
+
+.status-badge.inactive { color: #9ca3af; }
+.status-badge.onleave { color: #f59e0b; } */
+
+
+
+
+
+
+
+
+
+
+
+/* 🌈 Background and layout */
+.employee-login-page {
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f9ff, #eef2ff);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+  transition: all 0.3s ease;
+}
+
+/* 🏷️ Header section */
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-header h3 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #2563eb;
+  letter-spacing: 0.5px;
+}
+
+.login-sub {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* 🧾 Table container */
+.login-table-wrap {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 📋 Table styling */
+.login-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.login-table th,
+.login-table td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.2s ease;
+}
+
+.login-table th {
+  background: #f8fafc;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* 🌟 Row hover effect */
+.login-table tbody tr:hover {
+  background: #f1f5ff;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
+/* 👤 Avatar and user cell */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.user-id {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* 💡 Username and mono fields */
+.mono {
+  font-family: "Fira Code", monospace;
+  color: #334155;
+  font-size: 13px;
+}
+
+/* 🟢 Status badges */
+.status-badge {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.status-badge.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.inactive {
+  background: rgba(107, 114, 128, 0.15);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.status-badge.onleave {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* ✨ Table animation */
+.login-table tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+.login-table tbody tr:hover td {
+  color: #1e40af;
+}
+
+/* 📱 Responsive design */
+@media (max-width: 768px) {
+  .login-table th,
+  .login-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .login-header h3 {
+    font-size: 22px;
+  }
+}
