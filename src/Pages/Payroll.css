@@ -1,0 +1,333 @@
+/* 🌈 Payroll Page Layout */
+.payroll-container {
+  padding: 25px;
+  color: #222;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #eef3ff 0%, #ffffff 100%);
+  min-height: 100vh;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ✨ Header Section */
+.payroll-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Title */
+.payroll-container h2 {
+  color: #2d2f73;
+  font-weight: 700;
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.payroll-container h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #5b86e5, #36d1dc);
+}
+
+/* ===============================
+   🔍 Search Bar & Buttons
+   =============================== */
+.payroll-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Search Input */
+.payroll-search {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #5b86e5;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.payroll-search:focus {
+  border-color: #36d1dc;
+  box-shadow: 0 0 10px rgba(91, 134, 229, 0.4);
+}
+
+/* Generate Button */
+.generate-btn {
+  background: linear-gradient(90deg, #5b86e5, #36d1dc);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(54, 209, 220, 0.3);
+}
+
+.generate-btn:hover {
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(91, 134, 229, 0.4);
+}
+
+/* Add Payroll Button */
+.add-btn {
+  background: linear-gradient(90deg, #7b4397, #dc2430);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(220, 36, 48, 0.3);
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #dc2430, #7b4397);
+  transform: scale(1.05);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===============================
+   ➕ Add Payroll Form
+   =============================== */
+.add-form {
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.add-form input,
+.add-form select {
+  flex: 1 1 200px;
+  padding: 10px 12px;
+  border: 2px solid #5b86e5;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.add-form input:focus,
+.add-form select:focus {
+  border-color: #36d1dc;
+  box-shadow: 0 0 10px rgba(91, 134, 229, 0.4);
+}
+
+/* Save Button */
+.save-btn {
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(91, 134, 229, 0.3);
+}
+
+.save-btn:hover {
+  background: linear-gradient(90deg, #5b86e5, #36d1dc);
+  transform: scale(1.05);
+}
+
+/* ===============================
+   📊 Payroll Table
+   =============================== */
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+/* Table Headers */
+.payroll-table th {
+  background: linear-gradient(90deg, #5b86e5, #36d1dc);
+  color: white;
+  font-weight: 600;
+  padding: 14px 18px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.7px;
+  border: none;
+}
+
+.payroll-table tr {
+  transition: all 0.3s ease;
+}
+
+.payroll-table td {
+  padding: 14px 18px;
+  color: #2b2b2b;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Hover Row */
+.payroll-table tbody tr:hover {
+  background: rgba(91, 134, 229, 0.1);
+  transform: scale(1.01);
+  box-shadow: 0 2px 10px rgba(91, 134, 229, 0.15);
+}
+
+/* Salary Columns */
+.payroll-table td:nth-last-child(2),
+.payroll-table td:last-child {
+  color: #2d2f73;
+  font-weight: 600;
+}
+
+/* ===============================
+   🏷️ Status Badges
+   =============================== */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.status-badge.active {
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(54, 209, 220, 0.4);
+}
+
+.status-badge.leave {
+  background: linear-gradient(90deg, #f8d800, #fdeb71);
+  color: #000;
+  box-shadow: 0 2px 6px rgba(248, 216, 0, 0.4);
+}
+
+.status-badge.inactive {
+  background: linear-gradient(90deg, #f85032, #e73827);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(232, 56, 39, 0.4);
+}
+
+/* ===============================
+   💫 Animations
+   =============================== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    box-shadow: 0 0 5px #5b86e5, 0 0 10px #36d1dc;
+  }
+  100% {
+    box-shadow: 0 0 15px #36d1dc, 0 0 25px #5b86e5;
+  }
+}
+
+/* Apply glow effect when hovered */
+.payroll-table:hover {
+  animation: borderGlow 1.6s infinite alternate;
+}
+
+/* ===============================
+   🚫 No Results Message
+   =============================== */
+.no-results {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+  font-weight: 600;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ===============================
+   🌙 Responsive layout
+   =============================== */
+@media (max-width: 768px) {
+  .payroll-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .generate-btn,
+  .add-btn {
+    width: 100%;
+  }
+
+  .add-form {
+    flex-direction: column;
+  }
+
+  .payroll-table,
+  .payroll-table thead,
+  .payroll-table tbody,
+  .payroll-table th,
+  .payroll-table td,
+  .payroll-table tr {
+    display: block;
+  }
+
+  .payroll-table tr {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .payroll-table td {
+    padding: 10px;
+    text-align: right;
+    position: relative;
+  }
+
+  .payroll-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}

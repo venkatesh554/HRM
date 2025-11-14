@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-// import EmployeeSidebar from "../Components2/EmployeeSidebar"
+// import EmployeeSidebar from "../EmployeeComponents2/EmployeeSidebar"
 import './Dashboard.new.css';
 
 import Dashboard from '../Pages/Dashboard';
-import Projects from '../Pages/Projects';
+import Trainings from '../Pages/Trainings';
 import Employees from '../Pages/Employees';
 import Attendance from '../Pages/Attendance';
 import LeaveManagement from '../Pages/LeaveManagement';
 import Payroll from '../Pages/Payroll';
-import Performance from '../Pages/Performance';
+import Recruitment from '../Pages/Recruitment';
+import Settings from '../Pages/Settings';
+
 
 const pageMap = {
   'dashboard': Dashboard,
-  'projects': Projects,
   'employees': Employees,
   'attendance': Attendance,
   'leave-management': LeaveManagement,
   'payroll': Payroll,
-  'performance': Performance,
+  'Recruitment': Recruitment,
+  'Trainings': Trainings,
+  'Settings':Settings
+
 };
 
 export default function DashboardMain() {

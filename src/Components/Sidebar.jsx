@@ -19,9 +19,10 @@ const menu = [
   { key: 'payroll', label: 'Payroll', Icon: FaMoneyBillAlt },
   { key: 'attendance', label: 'Attendance', Icon: FaCalendarCheck },
   { key: 'leave-management', label: 'Leave Management', Icon: FaRegFileAlt },
-  { key: 'recruitment', label: 'Recruitment', Icon: FaUserPlus },
-  { key: 'training', label: 'Training', Icon: FaChalkboardTeacher },
-  { key: 'settings', label: 'Settings', Icon: FaCog },
+  { key: 'Recruitment', label: 'Recruitment', Icon: FaUserPlus },
+  { key: 'Trainings', label: 'Trainings', Icon: FaChalkboardTeacher },
+  { key: 'Settings', label: 'Settings', Icon: FaCog },
+  
 ];
 
 export default function Sidebar({ onNavigate, onLogout }) {
