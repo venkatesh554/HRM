@@ -1,0 +1,241 @@
+.attendanceSection {
+    padding: 30px;
+}
+
+/*  Header */
+.header {
+    margin-bottom: 25px;
+}
+
+.gradientTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header p {
+    color: #333;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+/* Attendance Summary Section */
+.attendanceSummary {
+    background: linear-gradient(135deg, #ed765e 0%, #e3bde5 100%);
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+}
+
+.attendanceSummary h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.attendanceGrid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.attendanceCard {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    width: 160px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attendanceCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.attendanceCard h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.attendanceCard p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* Attendance Trends */
+.attendanceTrendsSection {
+    background: linear-gradient(135deg, #d4feda, #ebfbf0);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attendanceTrendsSection h3 {
+    background: linear-gradient(135deg, #447a7a, #1e5b53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.attendanceTrendsSection p {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.chartContainer {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.summaryBox {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+}
+
+.summaryBox h4 {
+    color: #333;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.summaryBox p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0077b6;
+}
+
+
+
+/* Attendance Insights */
+.attendanceInsights {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.insightCard {
+    flex: 1;
+    min-width: 260px;
+    background: #d0d6ffe4;
+    backdrop-filter: blur(6px);
+    border-radius: 1rem;
+    padding: 1.2rem;
+    color: #140101;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.insightCard h4 {
+    background: linear-gradient(135deg, #70b5fa, #be7dfb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.insightCard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.insightCard li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.insightCard span {
+    font-weight: 600;
+    color: #faefc5;
+}
+
+
+/* Daily Check-in Summary */
+.dailyCheckinSection {
+    margin-top: 2.5rem;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    color: #000000;
+}
+
+.dailyCheckinSection h3 {
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, #121c84, #8278da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.checkinTable {
+    width: 100%;
+    border-collapse: collapse;
+    color: #030000;
+    font-size: 0.95rem;
+    border-radius: 0.6rem;
+    overflow: hidden;
+}
+
+.checkinTable th {
+    text-align: left;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #6fb7ff, #b77dfa);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.checkinTable td {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgb(0 0 0 / 12%);
+}
+
+.checkinTable tr:hover {
+    background: rgba(255, 255, 255, 0);
+    transition: 0.3s ease;
+}
+
+.present {
+    color: #66f65e;
+    font-weight: 600;
+}
+
+.absent {
+    color: #f96c6c;
+    font-weight: 600;
+}
