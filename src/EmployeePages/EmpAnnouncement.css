@@ -1,0 +1,351 @@
+.announcement-container {
+  margin-left: 270px;
+  padding: 40px;
+  background: #f7f8fc;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* --- Header & Filters --- */
+.announcement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.announcement-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filters input,
+.filters select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #6a11cb;
+}
+
+/* --- Add Button --- */
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* --- Table --- */
+.announcement-table-wrapper {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+.announcement-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* --- Gradient Header --- */
+.announcement-table thead tr {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+.announcement-table th,
+.announcement-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e6e6e6;
+  vertical-align: middle;
+}
+
+.announcement-table th {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.announcement-table td {
+  color: #333;
+}
+
+/* --- Icons --- */
+.action-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.action-icons .edit-icon,
+.action-icons .delete-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 1.5rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.edit-icon {
+  color: #8e44ad;
+  background: rgba(142, 68, 173, 0.1);
+}
+
+
+.delete-icon {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}
+
+
+/* --- No Data --- */
+.no-data {
+  text-align: center;
+  color: #777;
+  padding: 18px;
+}
+
+/* --- Modal --- */
+.announcement-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 40, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px 30px 35px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: #222;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #222;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+/* --- Form Grid --- */
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px 20px;
+  margin-bottom: 18px;
+}
+
+.modal-grid label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.modal-grid input,
+.modal-grid select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.modal-grid input:focus,
+.modal-grid select:focus,
+.modal-message textarea:focus {
+  border-color: #6a11cb;
+}
+
+/* --- Message Field --- */
+.modal-message label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.modal-message textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+  resize: none;
+  outline: none;
+}
+
+/* --- Save Button --- */
+.save-btn {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: 600;
+  float: right;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* --- Scrollbar --- */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.4);
+  border-radius: 6px;
+}
+
+@media (max-width: 1024px) {
+  .announcement-container {
+    margin-left: 0;
+    padding: 25px 20px;
+  }
+
+  .announcement-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcement-table th,
+  .announcement-table td {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .announcement-table {
+    display: block;
+  }
+
+  .announcement-table thead {
+    display: none;
+  }
+
+  .announcement-table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 10px 14px;
+  }
+
+  .announcement-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+
+  .announcement-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #333;
+  }
+}
