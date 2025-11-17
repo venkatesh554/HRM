@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import "./EmpAnnouncement.css";
@@ -303,3 +304,15 @@ export default function Announcement() {
     </div>
   );
 }
+=======
+import React from 'react';
+
+
+export default function EmpAnnouncement() {
+
+
+  return (
+    <div>EmpAnnouncement</div>
+  )
+}
+>>>>>>> 7d5c5e5f565e0bdbef21473502ed27520b15afa4

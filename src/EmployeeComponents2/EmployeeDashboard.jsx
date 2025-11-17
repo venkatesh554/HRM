@@ -213,7 +213,7 @@ export default function EmployeeMainDashboard() {
       <main className="employee-main">
         <header className="employee-header">
           <h1>
-            {section.charAt(0).toUpperCase() + section.slice(1).replace("-", " ")}
+            {/* {section.charAt(0).toUpperCase() + section.slice(1).replace("-", " ")} */}
           </h1>
         </header>
 

@@ -139,10 +139,7 @@
 
 
 
-
-
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaHome,
   FaUser,
@@ -150,53 +147,123 @@ import {
   FaClipboardList,
   FaMoneyBillWave,
   FaSignOutAlt,
+  FaBars,
 } from "react-icons/fa";
 import "./EmployeeSidebar.css";
 
 export default function EmployeeSidebar({ onNavigate }) {
   const [active, setActive] = useState("dashboard");
+  const [collapsed, setCollapsed] = useState(false);
 
   const menu = [
-    { key: "dashboard", label: "Dashboard", icon: <FaHome /> },
-    { key: "profile", label: "Profile", icon: <FaUser /> },
-    { key: "attendance", label: "Attendance", icon: <FaClock /> },
-    { key: "leave", label: "Leave", icon: <FaClipboardList /> },
-    { key: "payslips", label: "Payslips", icon: <FaMoneyBillWave /> },
-    { key: "announcements", label: "Announcements", icon: <FaMoneyBillWave /> },
-
+    { key: "dashboard", label: "Dashboard", Icon: FaHome },
+    { key: "profile", label: "Profile", Icon: FaUser },
+    { key: "attendance", label: "Attendance", Icon: FaClock },
+    { key: "leave", label: "Leave", Icon: FaClipboardList },
+    { key: "payslips", label: "Payslips", Icon: FaMoneyBillWave },
+    { key: "announcements", label: "Announcements", Icon: FaMoneyBillWave },
   ];
 
-  const handleNavigate = (key) => {
+  useEffect(() => {
+    document.documentElement.classList.add("has-employee-sidebar");
+
+    if (collapsed) {
+      document.documentElement.classList.add("employee-sidebar-collapsed");
+    } else {
+      document.documentElement.classList.remove("employee-sidebar-collapsed");
+    }
+
+    return () => {
+      document.documentElement.classList.remove("employee-sidebar-collapsed");
+      document.documentElement.classList.remove("has-employee-sidebar");
+    };
+  }, [collapsed]);
+
+  function handleClick(key) {
+    if (collapsed) {
+      setCollapsed(false);
+      return;
+    }
     setActive(key);
-    onNavigate(key);
-  };
+    if (onNavigate) onNavigate(key);
+  }
 
   return (
-    <aside className="employee-sidebar">
-      <div className="sidebar-header">
-        <h2 className="sidebar-title">Employee Panel</h2>
-        <div className="sidebar-sub">Welcome Back 👋</div>
+    <aside className={`employee-sidebar ${collapsed ? "collapsed" : ""}`}>
+      {/* Top Section */}
+      <div className="sidebar-top">
+        <button
+          className="collapse-btn"
+          onClick={() => setCollapsed((c) => !c)}
+        >
+          <FaBars />
+        </button>
+
+        <div className="brand">
+          <div className="logo">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#FFD166" />
+                  <stop offset="100%" stopColor="#FF7A7A" />
+                </linearGradient>
+              </defs>
+              <rect width="42" height="42" rx="10" fill="url(#g1)" />
+              <text
+                x="21"
+                y="26"
+                textAnchor="middle"
+                fontFamily="Inter, sans-serif"
+                fontWeight="700"
+                fontSize="14"
+                fill="#fff"
+              >
+                EM
+              </text>
+            </svg>
+          </div>
+
+          {!collapsed && <h2 className="brand-text">Employee</h2>}
+        </div>
       </div>
 
-      <nav className="sidebar-nav">
-        {menu.map((item) => (
-          <button
-            key={item.key}
-            className={`sidebar-item ${active === item.key ? "active" : ""}`}
-            onClick={() => handleNavigate(item.key)}
-          >
-            <span className="sidebar-icon">{item.icon}</span>
-            <span className="sidebar-label">{item.label}</span>
-          </button>
-        ))}
+      {/* Menu */}
+      <nav className="menu" role="navigation">
+        <ul>
+          {menu.map(({ key, label, Icon }) => (
+            <li key={key} className={active === key ? "active" : ""}>
+              <button
+                className="menu-item"
+                onClick={() => handleClick(key)}
+              >
+                <span className="icon-wrap">
+                  <Icon />
+                </span>
+                {!collapsed && <span className="label">{label}</span>}
+              </button>
+            </li>
+          ))}
+        </ul>
       </nav>
 
+      {/* Footer */}
       <div className="sidebar-footer">
-        <button className="logout-btn">
-          <FaSignOutAlt />
-          <span>Logout</span>
+        <button className="menu-item logout-btn">
+          <span className="icon-wrap">
+            <FaSignOutAlt />
+          </span>
+          {!collapsed && <span className="label">Logout</span>}
         </button>
-        <p className="footer-text">v1.0.0</p>
+
+        <div className="footer-info">
+          {!collapsed ? (
+            <small>
+              Logged in as <strong>Employee</strong>
+            </small>
+          ) : (
+            <span className="tiny">E</span>
+          )}
+        </div>
       </div>
     </aside>
   );

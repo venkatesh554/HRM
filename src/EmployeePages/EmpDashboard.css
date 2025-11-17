@@ -1,0 +1,224 @@
+/* ================================
+    EMPLOYEE DASHBOARD MAIN WRAPPER
+=================================== */
+.emp-container {
+  width: 90%;
+  margin-left: 150px;
+  padding: 20px;
+  background: #f3f5ff;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Sidebar expanded */
+.has-employee-sidebar .emp-container {
+  margin-left: 150px;
+}
+
+/* Sidebar collapsed */
+.employee-sidebar-collapsed .emp-container {
+  margin-left: 80px;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ================================
+    HEADER
+=================================== */
+.emp-header {
+  background: linear-gradient(135deg, #6a5af9, #8f77ff);
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(106, 90, 249, 0.25);
+  margin-bottom: 22px;
+  animation: headerFloat 1s ease;
+}
+
+@keyframes headerFloat {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.emp-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.emp-header p {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+/* ================================
+    SUMMARY CARDS (COLORED)
+=================================== */
+.summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 220px;
+  max-width: 23%;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  border: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Card 1 – Attendance */
+.summary-card:nth-child(1) {
+  background: linear-gradient(135deg, #6a5af9, #8f77ff);
+}
+
+/* Card 2 – Projects */
+.summary-card:nth-child(2) {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+/* Card 3 – Performance */
+.summary-card:nth-child(3) {
+  background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+/* Card 4 – Tasks Completed */
+.summary-card:nth-child(4) {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.summary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+.summary-card h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: white;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+}
+
+/* Responsive summary cards */
+@media (max-width: 1100px) {
+  .summary-card { max-width: 48%; }
+}
+@media (max-width: 600px) {
+  .summary-card { max-width: 100%; }
+}
+
+
+/* ================================
+    CHARTS ROW (CLEAN & FIXED)
+=================================== */
+.charts-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+/* FINAL DARK CHART BOX */
+.chart-box {
+  flex: 1;
+  min-width: 260px;
+  max-width: 48%;
+  padding: 20px;
+  background: #1f1f27;
+  border-radius: 18px;
+  height: 300px;
+  border: 1px solid #2a2a35;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: chartFade 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  margin-left:2%;
+}
+
+@keyframes chartFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chart-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+.chart-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* Prevent chart overflow */
+.chart-box canvas {
+  flex: 1;
+  max-height: 260px;
+  background: transparent !important;
+}
+
+
+/* ================================
+    CUSTOM LAYOUT — TWO PER ROW
+=================================== */
+.charts-row .chart-box:nth-child(1),
+.charts-row .chart-box:nth-child(2) {
+  max-width: 42%;
+  flex: 0 0 48%;
+}
+
+.charts-row .chart-box:nth-child(3),
+.charts-row .chart-box:nth-child(4) {
+  max-width: 42%;
+  flex: 0 0 48%;
+}
+
+
+/* ================================
+    RESPONSIVE
+=================================== */
+@media (max-width: 1300px) {
+  .chart-box { max-width: 48%; }
+}
+
+@media (max-width: 800px) {
+  .chart-box {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+
+/* ================================
+    LOADING TEXT
+=================================== */
+.loading {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #777;
+}

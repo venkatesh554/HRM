@@ -7,8 +7,13 @@ export default function App() {
   return(
     <>
     <Navbar/>
+<<<<<<< HEAD
     <DashboardMain />;
     {/* <EmployeeMainDashboard />; */}
+=======
+    {/* <DashboardMain />;*/}
+    <EmployeeMainDashboard />; 
+>>>>>>> 7d5c5e5f565e0bdbef21473502ed27520b15afa4
     </>
   )
 }
